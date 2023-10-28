@@ -1,0 +1,20 @@
+.navbar {
+    background-color: rgb(113, 24, 113);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+
+.navbar a:hover {
+    color: pink !important;
+}
+a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 25px;
+}
