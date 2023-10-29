@@ -12,6 +12,16 @@
 .navbar a:hover {
     color: pink !important;
 }
+
+.notActive {
+    color: white;
+  }
+
+.isActive {
+    color: violet;
+    text-decoration: underline;
+}
+
 a {
     color: white;
     text-decoration: none;
