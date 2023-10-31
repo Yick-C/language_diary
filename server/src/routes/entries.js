@@ -17,24 +17,34 @@ router.get("/", async (req, res) => {
 
 router.post("/", verifyToken, async (req, res) => {
     const entry = new EntryModel(req.body)
+    const user = await UserModel.findById(req.body.userOwner);
     try {
         const response = await entry.save();
+        user.diaryEntries.push(entry);
+        await user.save();
         res.json(response);
     } catch (err) {
         res.json(err)
     }
 });
 
-router.put("/", verifyToken, async (req, res) => {
+router.get("/diaryEntries/ids/:userID", async (req, res) => {
     try {
-        const entry = await EntryModel.findById(req.body.entryID);
-        const user = await UserModel.findById(req.body.userID);
-        user.savedEntries.push(entry);
-        await user.save();
-        res.json({savedEntries: user.savedEntries});
+        const user = await UserModel.findById(req.params.userID);
+        res.json({diaryEntries: user?.diaryEntries});
     } catch (err) {
-        res.json(err)
+        res.json(err);
     }
-});
+})
+
+router.get("/diaryEntries/:userID", async (req, res) => {
+    try {
+        const user = await UserModel.findById(req.params.userID);
+        const diaryEntries = await EntryModel.find({_id: {$in: user.diaryEntries}});
+        res.json({diaryEntries});
+    } catch (err) {
+        res.json(err);
+    }
+})
 
 export {router as entriesRouter};

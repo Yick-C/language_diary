@@ -5,7 +5,7 @@ const EntrySchema = new mongoose.Schema({
     date: {type: Date, required: true},
     imageUrl: {type: String},
     entryText: {type: String, required: true},
-    vocabList: {type: String},
+    vocabList: [{type: String}],
     userOwner: {type: mongoose.Schema.Types.ObjectId, ref: "users", required:true}
 });
 

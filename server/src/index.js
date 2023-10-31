@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json()); // converts requests to json
 app.use(cors()); // communicates front-end and back-end when using apis
 
-//connectDB();
+connectDB();
 
 app.use("/auth", userRouter);
 app.use("/entries", entriesRouter);

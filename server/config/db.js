@@ -4,7 +4,7 @@ import 'dotenv/config';
 const username = encodeURIComponent(process.env.DB_USERNAME);
 const password = encodeURIComponent(process.env.DB_PASSWORD);
 
-const uri = `mongodb+srv://${username}:${password}@cluster0.jsjbf5q.mongodb.net/diary?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${username}:${password}@cluster0.rjactut.mongodb.net/diary?retryWrites=true&w=majority`;
 
 // Setup items database and record schema
 const connectDB = async () => {

@@ -10,7 +10,7 @@ export const DiaryEntries = () => {
     const fetchDiaryEntries = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/diary/diaryEntries/${userID}`
+          `http://localhost:3001/entries/diary-entries/${userID}`
         );
         setDiaryEntries(response.data.diaryEntries);
       } catch (err) {
