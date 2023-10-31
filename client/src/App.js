@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/NavBar/Navbar";
 import { Footer } from "./components/Footer/Footer";
 
-import { Home } from "./pages/home";
-import { Contact } from "./pages/contact";
-import { Auth } from "./pages/auth";
-import { DiaryEntries } from './pages/diary-entries';
+import { Home } from "./pages/Home";
+import { Auth } from "./pages/Auth";
+import { CreateEntry } from './pages/CreateEntry';
+import { DiaryEntries } from './pages/DiaryEntries';
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/diaryEntries" element={<DiaryEntries />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/create-entry" element={<CreateEntry />} />
+          <Route path="/diary-entries" element={<DiaryEntries />} />
           <Route path="/auth" element={<Auth />} />
         </Routes>
       </Router>

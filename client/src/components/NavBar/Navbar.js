@@ -19,9 +19,6 @@ export const Navbar = () => {
       <NavLink to="/" className={checkActive}>
         Home
       </NavLink>
-      <NavLink to="/contact" className={checkActive}>
-        Contact
-      </NavLink>
       {!cookies.access_token ? (
         <NavLink to="/auth" className={checkActive}>
           Login/Register
@@ -29,7 +26,7 @@ export const Navbar = () => {
       ) : (
         <>
           <NavLink to="/calander">Calander</NavLink>
-          <NavLink to="/entries">Entries</NavLink>
+          <NavLink to="/create-entry">Entries</NavLink>
           <button onClick={logout}>Logout</button>
         </>
       )}
