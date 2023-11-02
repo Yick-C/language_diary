@@ -52,7 +52,7 @@ export const CreateEntry = () => {
         <h2>Create Entry</h2>
         <form onSubmit={onSubmit}>
         <label htmlFor="title">Title</label>
-            <input type="text" id="title" name="title" onChange={handleChange}/>
+            <input type="text" id="title" name="title"  maxlength="25" onChange={handleChange}/>
             <label htmlFor="vocabList">Vocab List</label>
             {entry.vocabList.map((vocab, idx) => (
                 <input 

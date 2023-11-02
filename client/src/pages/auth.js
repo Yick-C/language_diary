@@ -86,6 +86,7 @@ const Form = ({username, setUsername, password, setPassword, label, onSubmit}) =
                         type="text"
                         id="username" 
                         value={username} 
+                        maxlength="12"
                         onChange={(event) => setUsername(event.target.value)} // updates value 
                     />
                 </div>
