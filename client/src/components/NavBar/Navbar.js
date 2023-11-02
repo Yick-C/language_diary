@@ -25,7 +25,7 @@ export const Navbar = () => {
         </NavLink>
       ) : (
         <>
-          <NavLink to="/calander">Calander</NavLink>
+          <NavLink to="/calendar">Calendar</NavLink>
           <NavLink to="/create-entry">Entries</NavLink>
           <button onClick={logout}>Logout</button>
         </>
