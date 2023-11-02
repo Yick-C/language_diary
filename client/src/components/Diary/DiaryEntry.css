@@ -10,7 +10,7 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
 }
 .diary-entry:hover {
@@ -28,7 +28,17 @@
 }
 
 .diary-entry-content {
+  color: #333;
   flex: 1;
+}
+
+.diary-entry-content-link {
+  font-size: 0.9rem;
+  color: #724fe3;
+}
+
+.diary-entry-content-link:hover {
+  color: #b3a6dc;
 }
 
 .diary-entry-header {
