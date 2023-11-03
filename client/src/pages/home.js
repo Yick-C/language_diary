@@ -8,6 +8,7 @@ import DiaryEntry from "../components/Diary/DiaryEntry";
 
 export const Home = () => {
   const [diaryEntries, setDiaryEntries] = useState([]);
+  const [showMore, setShowMore] = useState(3);
   const userID = useGetUserID();
 
   useEffect(() => {
@@ -25,12 +26,20 @@ export const Home = () => {
     fetchDiaryEntries();
   }, []);
 
+  const handleShowMore = () => {
+    setShowMore(showMore + 3);
+  };
+
   return (
     <div>
       <h1>Today is {moment().format("dddd Do MMMM")} </h1>
-      {diaryEntries.map((entry) => (
+      {diaryEntries.slice(0, showMore).map((entry) => (
         <DiaryEntry data={entry} />
       ))}
+      {showMore < diaryEntries.length && (
+        <button onClick={handleShowMore}>Show More</button>
+      )}
     </div>
+    
   );
 };
