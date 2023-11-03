@@ -1,23 +1,29 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { CurrentEntry } from "../../pages/CurrentEntry";
+import { useNavigate } from "react-router-dom";
 
 export const DiaryCalendar = (props) => {
   const localizer = momentLocalizer(moment);
+  const navigate = useNavigate();
+  console.log(props.data);
 
   const events = props.data.map((entry) => ({
     id: entry._id,
     title: entry.title,
-    start: entry.date,
-    end: entry.date,
+    start: new Date(entry.date),
+    end: new Date(entry.date),
   }));
 
   const handleSelectSlot = (e) => {
-    console.log(e, "Event data");
+    console.log(e, "Event data, handle select slot");
   };
 
+  // Go to selected diary entry page
   const handleEventSelection = (e) => {
-    console.log(e, "Event data");
+    let index = props.data.findIndex(x => x._id ===e.id);
+    navigate(`/diary-entries/${e.id}`, {replace: false, state:{ data: props.data[index] }});
   };
 
   return (

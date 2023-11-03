@@ -2,7 +2,7 @@ import "./DiaryEntry.css";
 import moment from "moment";
 import { Link } from "react-router-dom";
 
-const DiaryEntry = (props) => {
+export const DiaryEntry = (props) => {
   let formattedDate = moment(props.data.date).format("MMMM Do YYYY, h:mm:ss a");
 
   function shortenText(str) {

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useGetUserID } from "../hooks/useGetUserID";
-import moment from "moment";
 import { DiaryCalendar } from "../components/Calendar/DiaryCalendar";
 
-export const CalendarEntries = (dateTime, title) => {
+export const CalendarEntries = () => {
   const [diaryEntries, setDiaryEntries] = useState([]);
   const userID = useGetUserID();
 

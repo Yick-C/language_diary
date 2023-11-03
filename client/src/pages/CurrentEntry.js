@@ -1,8 +1,4 @@
-import { useState } from "react";
-import axios from "axios";
-import { useGetUserID } from "../hooks/useGetUserID";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useCookies } from "react-cookie";
+import { useLocation } from "react-router-dom";
 import moment from "moment";
 
 export const CurrentEntry = () => {
